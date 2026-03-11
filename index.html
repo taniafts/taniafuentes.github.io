@@ -33,6 +33,13 @@
             text-transform: uppercase;
         }
 
+        header p {
+            font-weight: 300;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            color: #555;
+        }
+
         /* 2. Imagen Principal (Hero) */
         .main-image-container {
             width: 100%;
@@ -55,6 +62,16 @@
             text-align: center;
             font-size: 1.2rem;
             font-weight: bold;
+        }
+
+        .progress-banner span {
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
         }
 
         /* 4. Sección de Proyectos (Grid de 3) */
@@ -84,11 +101,30 @@
             height: 250px;
             object-fit: cover;
             border-bottom: 3px solid #eee;
+            position: relative;
         }
 
         .project-info {
             padding: 1.5rem;
             text-align: center;
+        }
+
+        /* 5. Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #555;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsividad para móviles */
@@ -101,25 +137,30 @@
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
-        <h1> "Tania Fuentes - Portfolio"</h1>
+        <h1>Tania Fuentes - Portfolio</h1>
+        <p>Portfolio in progress - More projects coming soon 🚀</p>
     </header>
 
+    <!-- HERO IMAGE -->
     <section class="main-image-container">
         <img src="img/img1-home-frog.png" alt="Foto de portada">
     </section>
 
+    <!-- BANNER DE PROGRESO -->
     <div class="progress-banner">
-        Portfolio still in progress 🚧
+        Portfolio still in progress <span>🚧</span>
     </div>
 
+    <!-- SECCIÓN DE PROYECTOS -->
     <section class="projects-section">
         
         <article class="project-card">
             <img src="img/img2-project1-pokedex.jpg" alt="Proyecto 1" class="project-image">
             <div class="project-info">
                 <h3>Pokedex - Power Apps and AI Builder</h3>
-                <p>Description.</p>
+                <p>Demo en construcción 🔨</p>
             </div>
         </article>
 
@@ -127,7 +168,7 @@
             <img src="img/img3-project2-tetris.png" alt="Proyecto 2" class="project-image">
             <div class="project-info">
                 <h3>Tetris - Power Pages</h3>
-                <p>Description</p>
+                <p>Demo en construcción 🔨</p>
             </div>
         </article>
 
@@ -135,11 +176,17 @@
             <img src="https://pbs.twimg.com/media/HCaz-TgXIAAAoaT.jpg" alt="Proyecto 3" class="project-image">
             <div class="project-info">
                 <h3>Power Platform</h3>
-                <p>Description</p>
+                <p>Demo en construcción 🔨</p>
             </div>
         </article>
 
     </section>
+
+    <!-- FOOTER -->
+    <footer>
+        Contact: <a href="mailto:TaniaFuentes@taniafuentes.onmicrosoft.com">TaniaFuentes@taniafuentes.onmicrosoft.com</a> | 
+        <a href="https://www.linkedin.com/in/tania-fuentes-497b50162/" target="_blank">LinkedIn</a>
+    </footer>
 
 </body>
 </html>
