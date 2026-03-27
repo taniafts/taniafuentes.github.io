@@ -1,0 +1,24 @@
+.navbar {
+  background: white;
+  transition: all 0.4s ease;
+}
+
+.navbar-brand {
+  font-family: 'Fredoka', sans-serif;
+  letter-spacing: 1px;
+}
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: black;
+}
+
+/* after scroll */
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(50px);
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-brand {
+  color: white;
+}

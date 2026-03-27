@@ -1,0 +1,50 @@
+<nav 
+  class="navbar navbar-expand-lg fixed-top"
+  [class.navbar-scrolled]="isScrolled"
+>
+  <div class="container">
+    <a class="navbar-brand" href="#"> < / > Portfolio</a>
+    <!-- Button -->
+    <button 
+    class="navbar-toggler" 
+    type="button" 
+    data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        
+        <li class="nav-item">
+        <a 
+          class="nav-link" 
+          href="#about"
+          [class.active]="activeSection === 'about'"
+        >
+          About
+        </a>
+      </li>
+
+        <li class="nav-item">
+          <a 
+            class="nav-link" 
+            href="#projects"
+            [class.active]="activeSection === 'projects'"
+          >
+            Projects
+            </a>
+        </li>
+        <li class="nav-item">
+          <a 
+            class="nav-link" 
+            href="#contact"
+            [class.active]="activeSection === 'contact'"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
