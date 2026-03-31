@@ -1,63 +1,43 @@
-<section id="projects" class="container projects mt-4 p-2">
-  <h2>02. Projects</h2>
-  <div class="projects-grid">
+<section id="projects" class="container projects mt-5">
+  <h2 class="mb-5">02. Projects</h2>
 
-    <!-- Pokedex App con video -->
-    <div class="project-card">
-      <div class="media-container">
-        <iframe src="https://www.youtube.com/embed/nNe4HxMgejc" title="Pokedex Demo" allowfullscreen></iframe>
+  <div 
+    *ngFor="let project of projects" 
+    class="project-row"
+    [ngClass]="{ 'reverse': project.reverse }"
+  >
+
+    <!-- MEDIA -->
+    <div class="project-media">
+
+      <!-- VIDEO -->
+      <iframe *ngIf="project.video" [src]="project.video"></iframe>
+
+      <!-- CAROUSEL -->
+      <div *ngIf="project.images" class="carousel">
+        <img 
+          [src]="project.images[project.currentIndex]" 
+          class="carousel-img"
+        >
+
+        <button class="prev" (click)="prev(project)">‹</button>
+        <button class="next" (click)="next(project)">›</button>
       </div>
-      <div class="project-info">
-        <h3>Pokedex App – Power Apps + API Integration</h3>
-        <p>
-          Built a Power Apps application that consumes external REST APIs to 
-          dynamically display Pokémon data. Includes filtering, pagination 
-          and Power Automate integration.
-        </p>
-        <div class="tech-icons">
-          <img src="assets/icons/powerapps.png" alt="Power Apps">
-          <img src="assets/icons/powerautomate.png" alt="Power Automate">
-          <img src="assets/icons/restAPI.png" alt="REST API">
-        </div>
-        <a href="https://github.com/taniafts/powerapps-pokedex" target="_blank">View Code →</a>
-      </div>
+
     </div>
 
-    <!-- Cafeteria System con imagen -->
-    <div class="project-card">
-      <div class="media-container">
-        <img src="assets/img/img3-project2-rapiHalcon.png" alt="Cafeteria System">
-      </div>
-      <div class="project-info">
-        <h3>Cafeteria Ordering System</h3>
-        <p>
-          Early project built to manage orders in a school cafeteria. 
-          Includes product selection, order tracking, and workflow 
-          handling for daily operations.
-        </p>
-        <div class="tech-icons">
-          <img src="assets/icons/powerapps.png" alt="Power Apps">
-          <img src="assets/icons/sharepoint.png" alt="SharePoint">
-          <img src="assets/icons/office365.png" alt="Office 365">
-        </div>
-        <a href="https://github.com/taniafts/powerapps-rapiHalcon" target="_blank">View Project →</a>
-      </div>
-    </div>
+    <!-- TEXT -->
+    <div class="project-text">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
 
-    <!-- Tetris con imagen -->
-    <div class="project-card">
-      <div class="media-container">
-        <img src="assets/img/img3-project2-tetris.png" alt="Tetris">
+      <div class="tech-icons">
+        <img *ngFor="let tech of project.technologies" [src]="tech">
       </div>
-      <div class="project-info">
-        <h3>Tetris - Power Pages</h3>
-        <p>Built an interactive web experience using Power Pages, focusing on UI customization and client-side logic.</p>
-        <div class="tech-icons">
-          <img src="assets/icons/powerpages.png" alt="Power Pages">
-        </div>
-        <p>🧱 Still in progress. 🚧</p>
-        
-      </div>
+
+      <a *ngIf="project.link" [href]="project.link" target="_blank">
+        {{ project.linkText }}
+      </a>
     </div>
 
   </div>

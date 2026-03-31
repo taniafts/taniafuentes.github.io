@@ -6,8 +6,8 @@
 
 /* glass card 🔥 */
 .about-card {
-    background: rgba(255, 255, 255, 0.623);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.432);
+    backdrop-filter: blur(50px);
     border-radius: 16px;
     padding: 2.5rem;
     color: rgb(97, 121, 87);
